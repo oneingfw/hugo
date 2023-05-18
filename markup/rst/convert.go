@@ -63,7 +63,8 @@ func (c *rstConverter) Supports(feature identity.Identity) bool {
 // to convert reStructuredText content to HTML.
 func (c *rstConverter) getRstContent(src []byte, ctx converter.DocumentContext) ([]byte, error) {
 	logger := c.cfg.Logger
-	binaryName, binaryPath := getRstBinaryNameAndPath()
+	binaryName := "rst2html.py"
+	binaryPath := "/c/msys64/usr/bin/rst2html.py"
 
 	if binaryName == "" {
 		logger.Println("rst2html / rst2html.py not found in $PATH: Please install.\n",
